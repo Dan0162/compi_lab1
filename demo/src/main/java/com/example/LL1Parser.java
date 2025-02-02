@@ -20,7 +20,8 @@ class Lexer {
     }
 
     public String nextToken() {
-        while (Character.isWhitespace(currentChar)) advance();
+        while (Character.isWhitespace(currentChar))
+            advance();
         if (Character.isLetter(currentChar)) {
             StringBuilder sb = new StringBuilder();
             while (Character.isLetterOrDigit(currentChar)) {
@@ -36,7 +37,8 @@ class Lexer {
                 advance();
             }
             return "num";
-        } else if (currentChar == '+' || currentChar == '-' || currentChar == '*' || currentChar == '/' || currentChar == ';' || currentChar == '(' || currentChar == ')' || currentChar == '=') {
+        } else if (currentChar == '+' || currentChar == '-' || currentChar == '*' || currentChar == '/'
+                || currentChar == ';' || currentChar == '(' || currentChar == ')' || currentChar == '=') {
             char temp = currentChar;
             advance();
             return String.valueOf(temp);
@@ -150,9 +152,9 @@ class Parser {
 public class LL1Parser {
     public static void main(String[] args) {
         String[] testInputs = {
-            "bin a; oct b; hex c; a = 101 + 11; b = 7 * 2; c = A + 1;",
-            "bin x; oct y; hex z; x = 110; y = 5 + 3; z = F * 2;",
-            "bin p; oct q; hex r; p = 1001 - 1; q = 6 / 2; r = B + 4;"
+                "bin a; oct b; hex c; a = 101 + 11; b = 7 * 2; c = A + 1;",
+                "bin x; oct y; hex z; x = 110; y = 5 + 3; z = F * 2;",
+                "bin p; oct q; hex r; p = 1001 - 1; q = 6 / 2; r = B + 4;"
         };
 
         for (String input : testInputs) {

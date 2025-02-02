@@ -1,13 +1,33 @@
 package com.example;
 
+import java.io.*;
+import java.util.Scanner;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        String[] testInputs = {
-            "bin a; oct b; hex c; a = 101 + 11; b = 7 * 2; c = A + 1;",
-            "bin x; oct y; hex z; x = 110; y = 5 + 3; z = F * 2;",
-            "bin p; oct q; hex r; p = 1001 - 1; q = 6 / 2; r = B + 4;"
-        };
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la dirección del archivo que desea analizar: ");
+        String file_path = scanner.nextLine();
+
+        String[] testInputs = {};
+
+        // Leer el archivo y cargar sus líneas en testInputs
+        List<String> lineas = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file_path))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                lineas.add(linea);
+            }
+            testInputs = lineas.toArray(new String[0]); // Convertir lista a arreglo
+
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+
+        // Procesar las entradas con Lexer y Parser
         for (String input : testInputs) {
             try {
                 System.out.println("Parsing input: " + input);
@@ -18,9 +38,8 @@ public class Main {
             } catch (RuntimeException e) {
                 System.out.println("Error: " + e.getMessage() + "\n");
             }
-        }        
-        
-    }
-    
-}
+        }
 
+        scanner.close();
+    }
+}
