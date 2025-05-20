@@ -1,0 +1,26 @@
+Program
+
+NAME test1;
+
+
+VARIABLE:
+
+int lenum = 0;
+ 
+FUNCTION:
+
+BEGIN
+
+input lenum = read();
+
+cond if (lenum > 33){
+
+   output write("Es mayor a 33");
+}
+else{
+   output write("Es menor a 33");
+}
+
+FINITO;
+
+END

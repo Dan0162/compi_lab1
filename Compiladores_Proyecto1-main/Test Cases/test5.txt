@@ -1,0 +1,35 @@
+Program
+
+NAME test1;
+
+
+VARIABLE:
+
+int result = 0;
+int numm = 33;
+string champ1 = "Morde";
+string champ2 = "";
+
+FUNCTION:
+
+function Rotacion (num1){
+	(num1 + 3) / 2;
+	RETURN num1;
+}
+
+BEGIN
+
+input champ2 = read();
+output write (champ1);
+output write (champ2);
+result = foo (numm);
+
+loop while( result > 18)
+{
+	output write ("Es legal");
+	result-;
+
+}
+
+
+END
