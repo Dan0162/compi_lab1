@@ -5,7 +5,7 @@ import com.compi.Gramatica_ANLTR4.ProjParser.*;
 
 public class Evaluador extends ProjBaseVisitor<String> {
 
-    private String exportProg = "";
+ private String exportProg = "";
     private String exportName = "";
     private int indentLevel = 0;
     
@@ -42,7 +42,6 @@ public class Evaluador extends ProjBaseVisitor<String> {
     @Override
     public String visitSegvar(SegvarContext ctx) {
         System.out.println("Visit: Segvar");
-        // Process variable declarations
         return visitChildren(ctx);
     }
 
@@ -85,13 +84,13 @@ public class Evaluador extends ProjBaseVisitor<String> {
             indentLevel--;
             exportProg += indent() + "}\n\n";
             
-            // Visit next function if exists
             if (ctx.deffunct() != null) {
                 visit(ctx.deffunct());
             }
         }
         return null;
     }
+
 
     @Override
     public String visitBodyfunct(BodyfunctContext ctx) {
