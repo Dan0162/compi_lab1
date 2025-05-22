@@ -1,6 +1,6 @@
 Program
 
-NAME test1;
+NAME test7;
 
 
 VARIABLE:

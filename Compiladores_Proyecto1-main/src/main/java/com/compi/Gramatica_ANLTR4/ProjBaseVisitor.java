@@ -1,6 +1,6 @@
 // Generated from Proj.g4 by ANTLR 4.13.2
 
-      package com.compi.Gramatica_ANLTR4;
+    package com.compi.Gramatica_ANLTR4;
 
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -125,6 +125,13 @@ public class ProjBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements P
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitAssignment(ProjParser.AssignmentContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitDef_cond(ProjParser.Def_condContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -147,6 +154,13 @@ public class ProjBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements P
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitDef_while(ProjParser.Def_whileContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitIncrement_decrement(ProjParser.Increment_decrementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

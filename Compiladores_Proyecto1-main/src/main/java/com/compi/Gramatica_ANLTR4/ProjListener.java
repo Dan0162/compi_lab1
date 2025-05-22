@@ -1,6 +1,6 @@
 // Generated from Proj.g4 by ANTLR 4.13.2
 
-      package com.compi.Gramatica_ANLTR4;
+    package com.compi.Gramatica_ANLTR4;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -160,6 +160,16 @@ public interface ProjListener extends ParseTreeListener {
 	 */
 	void exitBody_program(ProjParser.Body_programContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ProjParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(ProjParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(ProjParser.AssignmentContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ProjParser#def_cond}.
 	 * @param ctx the parse tree
 	 */
@@ -199,6 +209,16 @@ public interface ProjListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDef_while(ProjParser.Def_whileContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ProjParser#increment_decrement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrement_decrement(ProjParser.Increment_decrementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjParser#increment_decrement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrement_decrement(ProjParser.Increment_decrementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ProjParser#def_w}.
 	 * @param ctx the parse tree
