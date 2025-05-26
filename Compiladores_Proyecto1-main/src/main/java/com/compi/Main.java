@@ -96,6 +96,7 @@ public class Main {
             System.out.println("Directorio creado: " + directoryPath);
         } catch (IOException e) {
             System.err.println("Error al crear el directorio: " + e.getMessage());
+            scanner.close();
             return false;
         }
     }
@@ -110,10 +111,13 @@ public class Main {
         String response = scanner.nextLine().trim().toLowerCase();
         if (!response.equals("y")) {
             System.out.println("Creación de archivo cancelada.");
+            scanner.close();
             return false;
         }
     }
     
+        scanner.close();
+
     // Write content to file
     try (FileWriter writer = new FileWriter(file)) {
         writer.write(export_prog);
@@ -123,6 +127,9 @@ public class Main {
         System.err.println("Error al escribir en el archivo: " + e.getMessage());
         return false;
     }
+
+
+    
 }
 
 }
